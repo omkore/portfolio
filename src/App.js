@@ -1,23 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Header from './Components/Header/Header';
+import { useEffect, useState } from 'react';
+import { Loader } from './Components/Loaders/Loader';
+// import Home from './Components/Home/Home';
+// import { LoaderName } from "react-awesome-loaders"
+import { Toaster } from 'react-hot-toast';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [isLoading,setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    const fakeFetch = () =>{
+      setTimeout(()=>{
+        setIsLoading(false);
+      },3000);
+    };
+    fakeFetch();
+  },[]);
+
+
+  return isLoading ?(<Loader/>):(
+    <div 
+   
+      className="App">
+      <>
+      <Toaster
+        position='top-right'
+        toastOptions={{
+
+          success:{
+            iconTheme:{
+              primary:"#0086b3",
+            },
+          },
+        }}
+      ></Toaster>
+      <BrowserRouter>
+          <Routes>
+            {/* <LoaderName/> */}
+            {/* <Header/> */}
+            {/* <main className='main'>
+              {/* <Home/>   */}
+            {/* </main> */} 
+              <Route path='/' element={<Header/>}></Route>    
+          </Routes>
+        </BrowserRouter>
+      </>
     </div>
   );
 }
