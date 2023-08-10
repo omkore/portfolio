@@ -32,7 +32,7 @@ function App() {
             {/* <main className='main'>
               {/* <Home/>   */}
             {/* </main> */} 
-              <Route path='/' element={<Header/>}></Route>    
+              <Route path='/portfolio' element={<Header/>}></Route>    
           </Routes>
         </BrowserRouter>
       </>
