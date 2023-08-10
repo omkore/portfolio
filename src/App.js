@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Loader } from './Components/Loaders/Loader';
 // import Home from './Components/Home/Home';
 // import { LoaderName } from "react-awesome-loaders"
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [isLoading,setIsLoading] = useState(true);
@@ -25,18 +25,7 @@ function App() {
    
       className="App">
       <>
-      <Toaster
-        position='top-right'
-        toastOptions={{
-
-          success:{
-            iconTheme:{
-              primary:"#0086b3",
-            },
-          },
-        }}
-      ></Toaster>
-      <BrowserRouter>
+      <BrowserRouter basename='/portfolio'>
           <Routes>
             {/* <LoaderName/> */}
             {/* <Header/> */}
