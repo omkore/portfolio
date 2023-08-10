@@ -25,14 +25,14 @@ function App() {
    
       className="App">
       <>
-      <BrowserRouter basename='/portfolio'>
+      <BrowserRouter>
           <Routes>
             {/* <LoaderName/> */}
             {/* <Header/> */}
             {/* <main className='main'>
               {/* <Home/>   */}
             {/* </main> */} 
-              <Route path='/portfolio' element={<Header/>}></Route>    
+              <Route path='portfolio/' element={<Header/>}></Route>    
           </Routes>
         </BrowserRouter>
       </>
